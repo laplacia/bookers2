@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4">
+    <%= render 'side', {book:@book} %>
+  </div>
+
+  <div class="col-md-8">
+
+    <table class="table">
+    <h1>Book detail</h1>
+
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+    <%= render partial: 'book', locals:{show: true, book: @book}%>
+  </table>
+
+  </div>
+</div>

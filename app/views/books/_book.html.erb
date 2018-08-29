@@ -1,0 +1,24 @@
+<tbody>
+  <tr>
+    <td>
+      <%= attachment_image_tag book.user, :image, :fill, 50, 50, format:'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+    </td>
+    <td>
+      <%=link_to book.title, book, class: "book_#{book.id}" %>
+    </td>
+    <td>
+      <%= book.opinion %>
+    </td>
+
+    <% if defined? show %>
+    <% if current_user.id == book.user_id %>
+    <td>
+      <button type="button" class="btn btn-info"><%= link_to "edit",edit_book_path, class: "edit_book_#{book.id}" %></button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger"><%= link_to "Destroy",book_path,method: :delete, class: "destroy_book_#{book.id}" %></button>
+    </td>
+    <% end %>
+    <% end %>
+  </tr>
+</tbody>
