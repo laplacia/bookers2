@@ -2,9 +2,7 @@
   <div class="col-md-4 col-md-offset-4">
     <h1>welcome to Bookers  !!</h1>
     <p>In Bookers,<br>you can share and exchange your opinions , inpressions , and emotions<br>about various books!</p>
-      <button type="button" class="btn btn-block btn-info">
-        <%= link_to "Log in",new_user_session_path, class: "sign_in" %>
-      </button>
-      <button type="button" class="btn btn-block btn-success"><%= link_to "Sign up",new_user_registration_path, class:"sign_up" %></button>
+      <%= link_to "Log in",new_user_session_path, class: "sign_in btn btn-info col-xs-10 col-xs-offset-1" %>
+      <%= link_to "Sign up",new_user_registration_path, class: "sign_up btn btn-success col-xs-10 col-xs-offset-1" %>
   </div>
 </div>
