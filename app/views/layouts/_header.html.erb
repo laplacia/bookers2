@@ -14,9 +14,9 @@
             <li><%= link_to '  Books', books_path, class: "books glyphicon glyphicon-book" %></li>
             <li><%= link_to "  log out",destroy_user_session_path,method: :delete, class: "logout glyphicon glyphicon-log-out" %></li>
             <% else %>
-            <li><%= link_to 'Top', root_path %></li>
+            <li><%= link_to 'Top', root_path, class: "home glyphicon glyphicon-home" %></li>
             <li><%= link_to '  About', about_path, class: "about glyphicon glyphicon-link" %></li>
-            <li><%= link_to "  Sign up",new_user_registration_path, class: "sign_in glyphicon glyphicon-edit" %></li>
+            <li><%= link_to "  Sign up",new_user_registration_path, class: "sign_up glyphicon glyphicon-edit" %></li>
             <li><%= link_to '  Log in', new_user_session_path, class: "sign_in glyphicon glyphicon-log-in" %></li>
             <% end %>d
           </ul>
