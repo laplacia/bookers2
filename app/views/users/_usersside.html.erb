@@ -15,7 +15,7 @@
   </table>
   <% if user == current_user %>
     <%= link_to '',edit_user_path(current_user.id),class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
-
+  <% end %>
 <h1>New book</h1>
   <%= form_for(book, url: books_path)do |f| %>
     <%= f.label :title %>
@@ -24,16 +24,3 @@
     <%= f.text_area :opinion, class: "form-control book_body" %>
     <%= f.submit class: "btn btn-block btn-primary" %>
   <% end %>
-  <% else %>
-
-  <h1>New book</h1>
-  <%= form_for(book, url: books_path,method: :post)do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control book_title"%>
-    <%= f.label :opinion %>
-    <%= f.text_area :opinion, class: "form-control book_body" %>
-    <%= f.submit class: "btn btn-block btn-primary" %>
-  <% end %>
-
-<% end %>
-
