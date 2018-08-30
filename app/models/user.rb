@@ -20,6 +20,6 @@ class User < ApplicationRecord
   end
 
   has_many :books
-  validates :name, presence: true, length: {in: 2..20}
+  validates :name, length: {in: 2..20}
   validates :introduction, length: {maximum: 50}
 end
