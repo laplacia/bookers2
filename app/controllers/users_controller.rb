@@ -30,10 +30,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user == current_user
+    if current_user
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+     if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    else
+    flash[:danger] = @user.errors.full_messages
+    redirect_back(fallback_location: root_url)
+    end
   else
     @book = Book.find(params[:id])
     @book.update(book_params)
